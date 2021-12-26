@@ -1,0 +1,15 @@
+<table *ngIf="data; else noResults">
+	<tr>
+		<th>City Name</th>
+		<th>temperature</th>
+	</tr>
+	<tr *ngFor='let row of data'>
+		<td>{{row.dt | date:'yyyy-MM-dd : HH mm'}}</td>
+		<td>{{row.temp.day ? row.temp.day : row.temp}}</td>
+	</tr>
+
+</table>
+
+<ng-template #noResults>
+	<p>нет результатов</p>
+</ng-template>
